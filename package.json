@@ -42,7 +42,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\""
     
   },
-  "proxy": "https://reaction21.herokuapp.com/",
+  "proxy": "https://reaction21.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },
