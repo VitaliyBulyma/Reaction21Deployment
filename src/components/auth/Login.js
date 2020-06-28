@@ -51,9 +51,9 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
-    const logoStyle ={
-      color: "red"
-  };
+  //   const logoStyle ={
+  //     color: "red"
+  // };
     return (
         <div className="container-login100">
           <div className="wrap-login100">
@@ -86,7 +86,7 @@ class Login extends Component {
                   type="password"
                   className={classnames("", {
                     invalid: errors.password || errors.passwordincorrect
-                  })} className="input100"
+                  })} className="label-input100"
                 />
                 <label className="label-input100" htmlFor="password">Password</label>
                 <span className="red-text">
