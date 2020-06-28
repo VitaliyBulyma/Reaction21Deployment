@@ -50,7 +50,7 @@ class CreateReport extends React.Component {
      
       event.preventDefault();
      
-      const result = await fetch('http://localhost:5000/reports/'+this.state.first+'/'+this.state.second
+      const result = await fetch('https://reaction21.herokuapp.com/reports/'+this.state.first+'/'+this.state.second
       
       );
         const b = await result.json();

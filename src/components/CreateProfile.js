@@ -54,7 +54,7 @@ class CreateProfile extends React.Component {
      
       event.preventDefault();
      
-      await fetch('http://localhost:5000/profiles', {
+      await fetch('https://reaction21.herokuapp.com/profiles', {
         method: 'post',
         
         headers:{

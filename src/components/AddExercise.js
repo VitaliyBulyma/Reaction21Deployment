@@ -23,7 +23,7 @@ class addExercises extends React.Component {
       // alert('A name was submitted: ' + this.state.location);
       event.preventDefault();
       // let result = await fetch('http://localhost:5000/exercises', {
-      await fetch('http://localhost:5000/exercises', {
+      await fetch('https://reaction21.herokuapp.com/exercises', {
         method: 'post',
         // mode: 'no-cors',
         headers:{

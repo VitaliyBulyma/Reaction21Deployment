@@ -35,7 +35,7 @@ class CreateWorkout extends React.Component {
         if(localStorage.getItem("jwtToken") == null){
           window.location.replace("/login");
         }
-      await fetch('http://localhost:5000/exercises')
+      await fetch('https://reaction21.herokuapp.com/exercises')
         .then(response => response.json())
         .then(data => this.setState({ data }));
         
@@ -60,7 +60,7 @@ class CreateWorkout extends React.Component {
     async handleSubmit(event) {
       // alert('An exercise was submitted: ' + this.state.title);
       event.preventDefault();
-       await fetch('http://localhost:5000/workouts', {
+       await fetch('https://reaction21.herokuapp.com/workouts', {
         method: 'post',
         // mode: 'no-cors',
         headers:{

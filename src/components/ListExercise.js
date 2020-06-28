@@ -9,7 +9,7 @@ const [exercises, setItems] = useState([]);
 
 
     const fetchItems = async ()=>{
-        const data = await fetch('http://localhost:5000/exercises');
+        const data = await fetch('https://reaction21.herokuapp.com/exercises');
         const exercises = await data.json();
       
         setItems(exercises);

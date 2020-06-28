@@ -18,7 +18,7 @@ class EditWorkout extends React.Component {
     }
     
     async componentDidMount() {
-      await fetch('http://localhost:5000/workouts/'+this.props.match.params.id)
+      await fetch('https://reaction21.herokuapp.com/workouts/'+this.props.match.params.id)
         .then(response => response.json())
         .then(data => this.setState({ title: data.title, length:data.length }));
     }
@@ -37,7 +37,7 @@ class EditWorkout extends React.Component {
     async handleSubmit(event) {
     //   alert('The workout was updated: ' + this.state.title);
       event.preventDefault();
-       await fetch(('http://localhost:5000/workouts/'+this.props.match.params.id), {
+       await fetch(('https://reaction21.herokuapp.com/workouts/'+this.props.match.params.id), {
         method: 'PATCH',
         // mode: 'no-cors',
         headers:{

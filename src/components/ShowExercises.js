@@ -12,7 +12,7 @@ const [exercises, setItems] = useState([]);
 async function handleDelete(event){
     event.preventDefault();
     if (window.confirm("Are you sure you want to delete?")){
-    const url = 'http://localhost:5000/exercises/'+event.target.value;
+    const url = 'https://reaction21.herokuapp.com/exercises/'+event.target.value;
 
     await fetch(url, {
         method: 'delete'
@@ -27,7 +27,7 @@ async function handleDelete(event){
       if(localStorage.getItem("jwtToken") == null){
         window.location.replace("/login");
       }
-        const data = await fetch('http://localhost:5000/exercises');
+        const data = await fetch('https://reaction21.herokuapp.com/exercises');
         const exercises = await data.json();        
         setItems(exercises);
     }

@@ -14,7 +14,7 @@ async function handleDelete(event){
     if (window.confirm("Are you sure you want to delete?")){
       // alert("great");
     // console.log("the link was clicked");
-    const url = 'http://localhost:5000/workouts/'+event.target.value;
+    const url = 'https://reaction21.herokuapp.com/workouts/'+event.target.value;
     // console.log(event.target.value); 
     await fetch(url, {
         method: 'delete'
@@ -28,10 +28,10 @@ async function handleDelete(event){
       if(localStorage.getItem("jwtToken") == null){
         window.location.replace("/login");
       }
-        const data = await fetch('http://localhost:5000/workouts');
+        const data = await fetch('https://reaction21.herokuapp.com/workouts');
         const exercises = await data.json();        
         setItems(exercises);
-    }
+    };
   return (
     <div className="App">
       <div className="custom-table">
