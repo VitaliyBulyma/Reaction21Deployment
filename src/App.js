@@ -1,7 +1,7 @@
 import React from 'react';
 //import { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import { render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import './App.css';
 //import stylesheets
 import 'bootstrap/dist/css/bootstrap.min.css';

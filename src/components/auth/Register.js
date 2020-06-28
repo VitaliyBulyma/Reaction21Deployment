@@ -71,7 +71,7 @@ class Register extends Component {
                   type="text"
                   className={classnames("", {
                     invalid: errors.name
-                  })} className="label-input100"
+                  })} className="input100"
                 />
                 <label className="label-input100" htmlFor="name">Name</label>
                 <span className="red-text">{errors.name}</span>
@@ -99,7 +99,7 @@ class Register extends Component {
                   type="password"
                   className={classnames("", {
                     invalid: errors.password
-                  })} className="innput100"
+                  })} className="input100"
                 />
                 <label className="label-input100" htmlFor="password">Password</label>
                 <span className="red-text">{errors.password}</span>
@@ -113,7 +113,7 @@ class Register extends Component {
                   type="password"
                   className={classnames("", {
                     invalid: errors.password2
-                  })} className="input1000"
+                  })} className="input100"
                 />
                 <label className="label-input100" htmlFor="password2">Confirm Password</label>
                 <span className="red-text">{errors.password2}</span>
