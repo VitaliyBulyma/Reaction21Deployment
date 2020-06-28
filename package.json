@@ -39,10 +39,10 @@
     "eject": "react-scripts eject",
     "client": "cd src && npm start",
     "server": "cd backend && nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+    
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://reaction21.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },
