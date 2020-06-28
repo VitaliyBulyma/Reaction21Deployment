@@ -12,13 +12,6 @@ router.get('/:first/:second', async (req,res)=>{
    }
 });
 
-// router.get('/:user-:length', async (req,res)=>{
-//     try{
-//      const workouts = await Workout.find({user:req.params.user, length:req.params.length});
-//      res.json(workouts);
-//     }catch(err){
-//      res.json({message: err});
-//     }
-//  });
+
 
 module.exports = router;

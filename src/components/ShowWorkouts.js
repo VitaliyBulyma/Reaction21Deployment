@@ -25,9 +25,9 @@ async function handleDelete(event){
 }
 
     const fetchItems = async ()=>{
-      if(localStorage.getItem("jwtToken") == null){
-        window.location.replace("/login");
-      }
+      // if(localStorage.getItem("jwtToken") == null){
+      //   window.location.replace("/login");
+      // }
         const data = await fetch('https://reaction21.herokuapp.com/workouts');
         const exercises = await data.json();        
         setItems(exercises);
