@@ -13,7 +13,7 @@ const decoded = jwt_decode(b);
 name = decoded.name;
 // console.log(name);
 }else{
-  name="No User";  
+  name="Anonymous User";  
 }
 
 
@@ -32,9 +32,9 @@ class CreateWorkout extends React.Component {
     
     async componentDidMount() {
 
-        if(localStorage.getItem("jwtToken") == null){
-          window.location.replace("/login");
-        }
+        // if(localStorage.getItem("jwtToken") == null){
+        //   window.location.replace("/login");
+        // }
       await fetch('https://reaction21.herokuapp.com/exercises')
         .then(response => response.json())
         .then(data => this.setState({ data }));

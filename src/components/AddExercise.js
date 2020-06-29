@@ -14,11 +14,11 @@ class addExercises extends React.Component {
       this.setState({title: event.target.value});    
       
     }
-    componentDidMount(){
-      if(localStorage.getItem("jwtToken") == null){
-        window.location.replace("/login");
-      }
-    }
+    // componentDidMount(){
+    //   if(localStorage.getItem("jwtToken") == null){
+    //     window.location.replace("/login");
+    //   }
+    // }
     async handleSubmit(event) {
       // alert('A name was submitted: ' + this.state.location);
       event.preventDefault();

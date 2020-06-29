@@ -1,6 +1,21 @@
 
 
 import React from 'react';
+import jwt_decode from "jwt-decode";
+
+
+
+var name="";
+
+if(localStorage.getItem("jwtToken") != null){
+var b = localStorage.getItem("jwtToken");
+// console.log(b);
+const decoded = jwt_decode(b);
+name = decoded.name;
+// console.log(name);
+}else{
+  name="Anonymous User";  
+}
 
 
 class EditWorkout extends React.Component {
@@ -48,7 +63,7 @@ class EditWorkout extends React.Component {
             // "_id": this.props.match.params.id,
             "title": this.state.title,
             "length": this.state.length,
-            "user": "Vitaliy"          
+            "user": name          
         })
       });
 
