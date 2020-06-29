@@ -77,7 +77,7 @@ class CreateWorkout extends React.Component {
 
       this.setState({title: ''});     
       this.setState({length: ''});  
-      window.location.href = "/showworkouts";  
+      window.location.href = "https://reaction21.netlify.app/showworkouts";  
       
     }
     
