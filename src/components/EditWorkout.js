@@ -52,7 +52,7 @@ class EditWorkout extends React.Component {
     async handleSubmit(event) {
     //   alert('The workout was updated: ' + this.state.title);
       event.preventDefault();
-       await fetch(('https://reaction21.herokuapp.com/workouts/'+this.props.match.params.id), {
+       await fetch(('https://reaction21.herokuapp.com/workouts/edit/'+this.props.match.params.id), {
         method: 'PATCH',
         // mode: 'no-cors',
         headers:{

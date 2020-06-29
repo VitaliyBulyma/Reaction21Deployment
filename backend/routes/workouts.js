@@ -60,7 +60,7 @@ router.delete('/:workoutId', async (req, res)=>{
 });
 
 // Update a Specific workout
-router.patch('/:workoutId', async (req, res)=>{
+router.patch('/edit/:workoutId', async (req, res)=>{
     try{
     const updatedWorkout = await Workout.updateOne(
         {_id: req.params.workoutId},
