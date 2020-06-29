@@ -3,9 +3,8 @@ import React from 'react';
 import jwt_decode from "jwt-decode";
 
 
-
 var name="";
-
+function getUser(){
 if(localStorage.getItem("jwtToken") != null){
 var b = localStorage.getItem("jwtToken");
 // console.log(b);
@@ -15,6 +14,8 @@ name = decoded.name;
 }else{
   name="Anonymous User";  
 }
+return name;
+}
 
 
 class CreateWorkout extends React.Component {
@@ -22,19 +23,20 @@ class CreateWorkout extends React.Component {
       super(props);
       this.state = {title: ''};
       this.state = {length: ''};
-      this.state = {data: []};
+      this.state = {data: []};      
         
       // this.handleChangeTitle = this.handleChangeTitle.bind(this);
       this.handleChangeLength = this.handleChangeLength.bind(this);      
       this.handleSelect = this.handleSelect.bind(this);      
       this.handleSubmit = this.handleSubmit.bind(this);
+      
     }
     
     async componentDidMount() {
 
-        // if(localStorage.getItem("jwtToken") == null){
-        //   window.location.replace("/login");
-        // }
+        if(localStorage.getItem("jwtToken") == null){
+          window.location.replace("/login");
+        }
       await fetch('https://reaction21.herokuapp.com/exercises')
         .then(response => response.json())
         .then(data => this.setState({ data }));
@@ -42,9 +44,6 @@ class CreateWorkout extends React.Component {
 
     }
 
-    // handleChangeTitle(event) {
-    //   this.setState({title: event.target.value});   
-    // }
 
     handleChangeLength(event) {
         
@@ -58,7 +57,9 @@ class CreateWorkout extends React.Component {
     }
     
     async handleSubmit(event) {
-
+      
+      getUser();
+      
       // alert('An exercise was submitted: ' + name);
       event.preventDefault();
        await fetch('https://reaction21.herokuapp.com/workouts', {
@@ -77,8 +78,8 @@ class CreateWorkout extends React.Component {
 
       this.setState({title: ''});     
       this.setState({length: ''});  
-      window.location.href = "https://reaction21.netlify.app/showworkouts";  
-      
+      // window.location.href = "https://reaction21.netlify.app/showworkouts";  
+       window.location.replace("/showworkouts");
     }
     
     render() {
