@@ -43,8 +43,4 @@
  - dashboard page
 ![welcome](public/dash.png)
 
-NEXT STEP
 
-    1. Usability and accessibility testing
-    2. UI optimization
-    3. Navigation link optimization
