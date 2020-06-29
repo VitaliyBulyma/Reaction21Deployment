@@ -40,7 +40,7 @@ router.post('/', async (req, res)=>{
 
 // Specific workout
 
-router.get('/:workoutId', async (req, res)=>{
+router.get('/edit/:workoutId', async (req, res)=>{
     try{
     const workout = await Workout.findById(req.params.workoutId);
     res.json(workout);
