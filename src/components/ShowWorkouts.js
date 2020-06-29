@@ -3,9 +3,8 @@ import '../App.css';
 import Table from 'react-bootstrap/Table';
 import jwt_decode from "jwt-decode";
 
-
-
 var name="";
+function getUser(){ 
 
 if(localStorage.getItem("jwtToken") != null){
 var b = localStorage.getItem("jwtToken");
@@ -13,7 +12,10 @@ var b = localStorage.getItem("jwtToken");
 const decoded = jwt_decode(b);
 name = decoded.name;
 // console.log(name);
+return name;
+  }
 }
+
 
 function ShowWorkouts() {
     useEffect(()=>{
@@ -44,9 +46,9 @@ async function handleDelete(event){
         console.log(exercises);        
         setItems(exercises);
       }else {
-        
+        getUser();
         const data = await fetch(('https://reaction21.herokuapp.com/workouts/getby/'+name));
-        // console.log(data);
+        console.log(name);
         const exercises = await data.json(data); 
           // console.log(exercises);
         setItems(exercises);

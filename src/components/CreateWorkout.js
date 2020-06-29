@@ -58,7 +58,8 @@ class CreateWorkout extends React.Component {
     }
     
     async handleSubmit(event) {
-      // alert('An exercise was submitted: ' + this.state.title);
+
+      // alert('An exercise was submitted: ' + name);
       event.preventDefault();
        await fetch('https://reaction21.herokuapp.com/workouts', {
         method: 'post',
