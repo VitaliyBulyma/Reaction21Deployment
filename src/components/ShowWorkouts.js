@@ -45,7 +45,7 @@ async function handleDelete(event){
         setItems(exercises);
       }else {
         
-        const data = await fetch(('http://localhost:5000/workouts/getby/'+name));
+        const data = await fetch(('https://reaction21.herokuapp.com/workouts/getby/'+name));
         // console.log(data);
         const exercises = await data.json(data); 
           // console.log(exercises);
