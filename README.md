@@ -1,7 +1,28 @@
 ## - work in progress - ##
 
 ### Team project, built with MERN stack (MongoDB, Express, React, Node.js)
-   
+
+## Personal Contributions
+#### - Vitaliy Bulyma
+ 
+ * Exercises and Workout Create Read Update Delete functionality
+ * Files
+   * **backend** /   
+     * models/ Exercise.js
+     * models/ Workout.js
+     * routes/ exercises.js
+     * routes/ workouts.js
+     * server.js
+   * **frontend** src/
+     * App.js
+     * components/
+       * AddExercise.js
+       * ListExercise.js
+       * ShowExercises.js
+       * CreateWorkout.js
+       * EditWorkout.js
+       * ShowWorkouts.js
+       * Nav.js
 
 ## To start
 
