@@ -33,7 +33,7 @@ class EditWorkout extends React.Component {
     }
     
     async componentDidMount() {
-      await fetch('https://reaction21.herokuapp.com/workouts/'+this.props.match.params.id)
+      await fetch('https://reaction21.herokuapp.com/workouts/edit/'+this.props.match.params.id)
         .then(response => response.json())
         .then(data => this.setState({ title: data.title, length:data.length }));
     }

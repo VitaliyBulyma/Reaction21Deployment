@@ -63,7 +63,7 @@ function App() {
               <Route path="/showexercises" exact component={ShowExercises} />                         
               <Route path="/showworkouts" exact component={ShowWorkouts} />                    
               <Route path="/createworkout" exact component={CreateWorkout} />   
-              <Route path="/editworkout/:id" exact component={EditWorkout} />
+              <Route path="/workouts/edit/:id" exact component={EditWorkout} />
               <Route path="/reports" component={CreateReport} />
               {/* add login&register components */}
               <Route path="/login" exact component={Login} />

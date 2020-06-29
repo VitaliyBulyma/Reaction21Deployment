@@ -79,7 +79,7 @@ async function handleDelete(event){
       <td>{item.length}</td>
       <td>{item.date.toString().slice(0,10) +" at: " + item.date.toString().slice(11,19) }</td>
       <td><button className="btn btn-primary" value={item._id} onClick={handleDelete}>Delete</button></td>
-      <td><button className="btn btn-primary" value={item._id} ><a id="buttonLink" href={'/edit/'+item._id}>Edit</a></button></td>
+      <td><button className="btn btn-primary" value={item._id} ><a id="buttonLink" href={'/workouts/edit/'+item._id}>Edit</a></button></td>
     </tr>
     ))} 
   </tbody>
