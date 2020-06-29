@@ -1,7 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import '../App.css';
 import Table from 'react-bootstrap/Table';
+import jwt_decode from "jwt-decode";
 
+
+
+var name="";
+
+if(localStorage.getItem("jwtToken") != null){
+var b = localStorage.getItem("jwtToken");
+// console.log(b);
+const decoded = jwt_decode(b);
+name = decoded.name;
+// console.log(name);
+}
 
 function ShowWorkouts() {
     useEffect(()=>{
@@ -25,12 +37,20 @@ async function handleDelete(event){
 }
 
     const fetchItems = async ()=>{
-      // if(localStorage.getItem("jwtToken") == null){
-      //   window.location.replace("/login");
-      // }
-        const data = await fetch('https://reaction21.herokuapp.com/workouts');
-        const exercises = await data.json();        
+      if(localStorage.getItem("jwtToken") == null){
+        // window.location.replace("/login");
+        const data = await fetch('https://reaction21.herokuapp.com/workouts/');
+        const exercises = await data.json();
+        console.log(exercises);        
         setItems(exercises);
+      }else {
+        
+        const data = await fetch(('http://localhost:5000/workouts/getby/'+name));
+        // console.log(data);
+        const exercises = await data.json(data); 
+          // console.log(exercises);
+        setItems(exercises);
+      }
     };
   return (
     <div className="App">

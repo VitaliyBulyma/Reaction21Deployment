@@ -11,6 +11,16 @@ router.get('/', async (req,res)=>{
     res.json({message: err});
    }
 });
+// Get all workouts by user
+router.get('/getby/:username', async (req,res)=>{
+   try{
+    const workouts = await Workout.find({user: req.params.username});
+    console.log(workouts);
+    res.json(workouts);
+   }catch(err){
+    res.json({message: err});
+   }
+});
 // Submits the workout
 router.post('/', async (req, res)=>{
     const workout = new Workout({
