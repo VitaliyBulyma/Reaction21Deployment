@@ -1,9 +1,10 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class addExercises extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {title: ''};
+      this.state = {title: '', flag: false};
   
       this.handleChangeTitle = this.handleChangeTitle.bind(this);
       
@@ -39,8 +40,8 @@ class addExercises extends React.Component {
       
       this.setState({title: ''});
       // alert("Exercise added");
-      window.location.href = "/createworkout";
-      
+      // window.location.href = "/createworkout";
+      this.setState({flag: true});
     }
   
     render() {
@@ -51,6 +52,7 @@ class addExercises extends React.Component {
             <input  id="name" type="text" value={this.state.title} onChange={this.handleChangeTitle} required />
             <input className="btn btn-primary" type="submit" value="Submit" />
           </form> 
+          {this.state.flag && (<Redirect to={'/createworkout'}/>) }
         </div>
       );
     }

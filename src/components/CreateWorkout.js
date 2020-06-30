@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 
 
@@ -21,9 +22,10 @@ return name;
 class CreateWorkout extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {title: ''};
-      this.state = {length: ''};
-      this.state = {data: []};      
+      this.state = {title: '', length: '', data: [], abc: ""};
+      // this.state = {length: ''};
+      // this.state = {data: []};  
+      // this.state = {abc: ""};     
         
       // this.handleChangeTitle = this.handleChangeTitle.bind(this);
       this.handleChangeLength = this.handleChangeLength.bind(this);      
@@ -34,13 +36,13 @@ class CreateWorkout extends React.Component {
     
     async componentDidMount() {
 
-        if(localStorage.getItem("jwtToken") == null){
-          window.location.replace("/login");
-        }
+        // if(localStorage.getItem("jwtToken") == null){
+        //   window.location.replace("/login");
+        // }
       await fetch('https://reaction21.herokuapp.com/exercises')
         .then(response => response.json())
         .then(data => this.setState({ data }));
-        
+        // console.log(this.state.data);
 
     }
 
@@ -52,7 +54,7 @@ class CreateWorkout extends React.Component {
     }
 
     handleSelect(event){
-      console.log(event.target.value);
+      // console.log(event.target.value);
       this.setState({title: event.target.value}); 
     }
     
@@ -78,14 +80,17 @@ class CreateWorkout extends React.Component {
 
       this.setState({title: ''});     
       this.setState({length: ''});  
-      // window.location.href = "https://reaction21.netlify.app/showworkouts";  
-       window.location.replace("/showworkouts");
+      // window.location.href = "https://reaction21.netlify.app/showworkouts";
+      this.setState({abc: true});
+      
+      //  window.location.replace("/showworkouts");
     }
     
     render() {
       
       return (       
         <div className="custom-form">
+        
           <form onSubmit={this.handleSubmit}>
             <select id="select" onChange={this.handleSelect}>
               {this.state.data.map(item =>(                
@@ -95,7 +100,8 @@ class CreateWorkout extends React.Component {
           <label>Duration</label>
             <input type="text" value={this.state.length} onChange={this.handleChangeLength} required />
           <input className="btn btn-primary" type="submit" value="Submit" />
-        </form>        
+        </form> 
+        {this.state.abc && (<Redirect to={'/showworkouts'}/>) }       
       </div>
       );
     }
