@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import {Link} from 'react-router-dom';
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -20,10 +21,28 @@ class Dashboard extends Component {
               <h4 style={{fontSize:"35px"}}>
                 <b>Hey there,</b> {user.name.split(" ")[0]}
                 <p className="slogan">
-                  You are logged into REACTion{" "}
-                  <span style={{ fontFamily: "monospace" }}>21</span> app 👏
+                  Welcome to REACTion{" "}
+                  <span style={{ fontFamily: "monospace" }}>21</span> App 
                 </p>
+                <p className="slogan2">
+                With REACTion21 you can create and customize your workouts and keep your training on track!
+                To make sure your experience is the best,
+                we need to get to know you a little better.</p>
+                <p className="slogan2">Let's start now!</p>
               </h4>
+              <div style={{margin:"2vw auto"}} className="container-login100-form-btn">
+              <Link
+                to="/profiles"
+                style={{
+                  width: "140px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="login100-form-btn"
+              >
+                Create Profile
+              </Link>
+            </div>
               <div className="container-login100-form-btn">
                 <button
                   style={{

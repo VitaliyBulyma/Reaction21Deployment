@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {ReactDOM} from 'react';
 import jwt_decode from "jwt-decode";
-
+import '../App.css';
 
 
 // var user="";
@@ -21,8 +21,7 @@ class CreateReport extends React.Component {
     constructor(props) {
       super(props);
 
-      this.state = {first: ''};
-      this.state = {second: ''}
+      this.state = {first: '', second:'', results:[]};
   
       this.handleChangeFirst = this.handleChangeFirst.bind(this);
       this.handleChangeSecond = this.handleChangeSecond.bind(this);
@@ -54,23 +53,38 @@ class CreateReport extends React.Component {
       
       );
         const b = await result.json();
-        console.log(b);    
+        console.log(b); 
+        
+        for (let i = 0; i < 10; i++) {
+          this.setState({
+            results:b 
+          }); 
+        }
+        this.state = { b };
     }
   
     render() {
       return (       
         <div className="custom-form">
+          <h1>View Reports</h1>
+          <div className="custom-input"></div>
           <form onSubmit={this.handleSubmit}>
-            <label for="first" >First Date: </label>
-            <input  id="first" type="text" value={this.state.first} onChange={this.handleChangeFirst} required />
+            <label for="first" >From</label>
+            <input className="custom-input-field" id="first" type="text" value={this.state.first} placeholder="First Date" onChange={this.handleChangeFirst} required />
 
-            <label for="second" >Second Date: </label>
-            <input  id="second" type="text" value={this.state.second} onChange={this.handleChangeSecond} required />
+            <label for="second" >To</label>
+            <input className="custom-input-field" id="second" type="text" value={this.state.second} placeholder="Second Date" onChange={this.handleChangeSecond} required />
             
             <div>
                 <input className="btn btn-primary" type="submit" value="Submit" />
             </div>
           </form> 
+          <div id="results">
+            
+              {this.state.results.map((result, index) =>
+                <p key={index}>You did {result.title} for {result.length} minutes on {result.date.toString().slice(0,10)}.</p>
+              )}
+          </div>
         </div>
       );
     }

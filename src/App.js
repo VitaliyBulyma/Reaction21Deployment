@@ -29,6 +29,8 @@ import CreateReport from './components/CreateReport';
 //add login&register components
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import EditProfile from './components/EditProfile';
+import ShowProfile from './components/ShowProfile';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -58,7 +60,9 @@ function App() {
             <Switch>
               {/* <Route path="/" exact component={Home} />     */}
               <Route path="/" exact component={Landing} />   
-              <Route path="/profiles" exact component={CreateProfile} />          
+              <Route path="/profiles" exact component={CreateProfile} /> 
+              <Route path="/profiles/editprofile/:id" exact component={EditProfile} /> 
+              <Route path="/showprofile" exact component={ShowProfile} />          
               <Route path="/exercises" exact component={AddExercise} />
               <Route path="/showexercises" exact component={ShowExercises} />                         
               <Route path="/showworkouts" exact component={ShowWorkouts} />                    

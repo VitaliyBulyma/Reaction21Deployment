@@ -47,12 +47,15 @@ class addExercises extends React.Component {
     render() {
       return (       
         <div className="custom-form">
+          
+          <h1>Add Exercise</h1>
+          <div className="custom-input">
           <form onSubmit={this.handleSubmit}>
-            <label for="name" >Enter name of the exercise: </label>
-            <input  id="name" type="text" value={this.state.title} onChange={this.handleChangeTitle} required />
-            <input className="btn btn-primary" type="submit" value="Submit" />
+            <input className="custom-input-field" id="name" type="text" placeholder="Enter name of the exercise" value={this.state.title} onChange={this.handleChangeTitle} required />
+            <input className="btn btn-primary" type="submit" value="Add" />
           </form> 
           {this.state.flag && (<Redirect to={'/createworkout'}/>) }
+        </div>
         </div>
       );
     }

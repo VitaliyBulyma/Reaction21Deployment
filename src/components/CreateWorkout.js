@@ -90,18 +90,19 @@ class CreateWorkout extends React.Component {
       
       return (       
         <div className="custom-form">
-        
+          <h1>Create Workout</h1>
+          <div className="custom-input">
           <form onSubmit={this.handleSubmit}>
-            <select id="select" onChange={this.handleSelect}>
+            <select className="custom-input-field" style={{textAlign:"center",margin:"0 auto",paddingLeft:"25px"}} id="select" onChange={this.handleSelect}>
               {this.state.data.map(item =>(                
                 <option key={item._id} value={item.title} >{item.title}</option>                
               ))}
             </select> 
-          <label>Duration</label>
-            <input type="text" value={this.state.length} onChange={this.handleChangeLength} required />
+            <input className="custom-input-field" type="text" value={this.state.length} placeholder="Duration (min)" onChange={this.handleChangeLength} required />
           <input className="btn btn-primary" type="submit" value="Submit" />
-        </form> 
-        {this.state.abc && (<Redirect to={'/showworkouts'}/>) }       
+           </form> 
+          {this.state.abc && (<Redirect to={'/showworkouts'}/>) }       
+      </div>
       </div>
       );
     }

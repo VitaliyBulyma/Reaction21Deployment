@@ -82,18 +82,16 @@ class CreateProfile extends React.Component {
     render() {
       return (       
         <div className="custom-form">
+          <h1>Create your REACTion21 profile</h1>
+          <div className="custom-input">
           <form onSubmit={this.handleSubmit}>
-            <label for="gender" >Enter your gender: </label>
-            <input  id="gender" type="text" value={this.state.gender} onChange={this.handleChangeGender} required />
+            <input className="custom-input-field" id="gender" type="text" placeholder="Enter your gender" value={this.state.gender} onChange={this.handleChangeGender} required />
+            <input className="custom-input-field" id="age" type="text" placeholder="Enter your age" value={this.state.age} onChange={this.handleChangeAge} required />
+            <input  className="custom-input-field"id="city" type="text" placeholder="Enter your city" value={this.state.city} onChange={this.handleChangeCity} required />
 
-            <label for="age" >Enter your age: </label>
-            <input  id="age" type="text" value={this.state.age} onChange={this.handleChangeAge} required />
-
-            <label for="city" >Enter your city: </label>
-            <input  id="city" type="text" value={this.state.city} onChange={this.handleChangeCity} required />
-
-            <input className="btn btn-primary" type="submit" value="Submit" />
+            <input className="btn btn-primary" type="submit" value="Create" />
           </form> 
+        </div>
         </div>
       );
     }

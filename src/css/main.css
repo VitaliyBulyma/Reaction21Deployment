@@ -144,6 +144,13 @@ ul, li {
   line-height: 60px;
   margin: 3vw;
 }
+.slogan2 {
+  color: whitesmoke;
+  font-size: 28px;
+  line-height: 50px;
+  margin: 3vw;
+}
+
 nav {
   width: 260px;
   margin: 0;
@@ -188,10 +195,40 @@ aside ul li ::before {
   z-index: -1;
 }
 
+#results {
+  margin-top:2em;
+  width:700px;
+  height:auto;
+  background-color: #fff;
+  color: #000;
+  text-align:center;
+  margin-left:11.5em;
+}
+
+#results p {
+  font-size:1em;
+}
+
 /*------------- customize form --------------*/
 .custom-form {
   z-index: 99;
-  padding: 15vw;
+  padding: 12vw;
+}
+.custom-input {
+  margin: 5em;
+  text-align: center;
+  justify-content: center;
+}
+.custom-input-field {
+  width: 45%;
+  min-width: 250px;
+  height: 3.5vw;
+  border-radius: 5px;
+
+  margin: 2vw auto;
+  text-align: center;
+  display: block;
+  background-color: rgba(225, 225, 225, 0.75);
 }
 /*------------------customize table-----------------*/
 .custom-table {
@@ -201,7 +238,11 @@ aside ul li ::before {
   margin-bottom: 5%;
   overflow: auto;
 }
-
+.scroll-table {
+  overflow: scroll;
+  overflow-y: visible;
+  height: 680px;
+}
 
 aside ul li:first-child{border-top:none;}
 
