@@ -80,9 +80,9 @@ class EditWorkout extends React.Component {
           <form onSubmit={this.handleSubmit}>
 
           <label>Workout</label>
-            <input type="text" value={this.state.title}  onChange={this.handleChangeTitle} />
+            <input className="custom-input-field" type="text" value={this.state.title}  onChange={this.handleChangeTitle} />
           <label>Duration</label>
-            <input type="text" value={this.state.length}  onChange={this.handleChangeLength} />
+            <input className="custom-input-field" type="text" value={this.state.length}  onChange={this.handleChangeLength} />
           <input className="btn btn-primary" type="submit" value="Submit" />
         </form>        
       </div>
